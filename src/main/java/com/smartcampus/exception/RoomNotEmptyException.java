@@ -1,8 +1,7 @@
 package com.smartcampus.exception;
 
 /**
- * Thrown when a client tries to delete a room
- * that still has sensors assigned to it.
+ * Thrown when a client tries to delete a room that still has sensors assigned to it.
  */
 public class RoomNotEmptyException extends RuntimeException {
 
