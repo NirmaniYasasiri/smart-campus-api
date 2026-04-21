@@ -2,8 +2,7 @@ package com.smartcampus.model;
 
 /**
  * Standard JSON error response model used by the API.
- * This ensures errors are returned in a clean and consistent format
- * instead of exposing raw server-side exceptions.
+ * This ensures errors are returned in a clean and consistent format instead of exposing raw server-side exceptions.
  */
 public class ApiError {
 
