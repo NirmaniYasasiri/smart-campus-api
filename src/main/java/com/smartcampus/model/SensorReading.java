@@ -2,7 +2,7 @@ package com.smartcampus.model;
 
 /**
  * Model class representing a historical reading recorded by a sensor.
- *Each reading has its own ID, a timestamp, and a measured value.
+ * Each reading has its own ID, a timestamp, and a measured value.
  */
 public class SensorReading {
 
