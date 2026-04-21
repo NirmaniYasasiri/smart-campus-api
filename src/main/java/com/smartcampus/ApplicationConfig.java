@@ -16,7 +16,6 @@ import java.util.Set;
 
 /**
  * Main JAX-RS application configuration class for the Smart Campus API.
- *
  * This class defines the base path of the API and registers
  * all resource classes, exception mappers, and filters
  * that should be managed by the JAX-RS runtime.
