@@ -2,7 +2,7 @@ package com.smartcampus.model;
 
 /**
  * Model class representing a sensor in the Smart Campus system.
- *A sensor belongs to a room and stores its type, current status,
+ * A sensor belongs to a room and stores its type, current status,
  * and latest measured value.
  */
 public class Sensor {
