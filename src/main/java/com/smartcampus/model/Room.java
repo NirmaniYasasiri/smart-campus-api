@@ -5,7 +5,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Model class representing a room in the Smart Campus system.
- *Each room has an ID, a human-readable name, a maximum capacity,
+ * Each room has an ID, a human-readable name, a maximum capacity,
  * and a list of sensor IDs assigned to that room.
  */
 public class Room {
