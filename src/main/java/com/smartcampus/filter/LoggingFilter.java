@@ -10,7 +10,6 @@ import java.util.logging.Logger;
 
 /**
  * Logs every incoming HTTP request and outgoing HTTP response.
- *
  * This is useful for API observability and debugging.
  */
 @Provider
