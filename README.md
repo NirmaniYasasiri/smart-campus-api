@@ -186,3 +186,105 @@ Clean and Build
   "name": "Library Quiet Study",
   "capacity": 80
 }
+
+{
+  "id": "TEMP-001",
+  "type": "Temperature",
+  "status": "ACTIVE",
+  "currentValue": 22.5,
+  "roomId": "LIB-301"
+}
+
+{
+  "id": "CO2-001",
+  "type": "CO2",
+  "status": "MAINTENANCE",
+  "currentValue": 410.0,
+  "roomId": "ENG-101"
+}
+```
+---
+
+## 8. Sample curl Commands
+
+### 1. Discovery endpoint
+
+```bash
+curl -X GET http://localhost:8080/smart-campus-api/api/v1
+```
+
+### 2. Create a room
+
+```bash
+curl -X POST http://localhost:8080/smart-campus-api/api/v1/rooms \
+  -H "Content-Type: application/json" \
+  -d "{\"id\":\"LIB-301\",\"name\":\"Library Quiet Study\",\"capacity\":80}"
+```
+
+### 3. Get all rooms
+
+```bash
+curl -X GET http://localhost:8080/smart-campus-api/api/v1/rooms
+```
+
+### 4. Get a room by ID
+
+```bash
+curl -X GET http://localhost:8080/smart-campus-api/api/v1/rooms/LIB-301
+```
+
+### 5. Create a sensor
+
+```bash
+curl -X POST http://localhost:8080/smart-campus-api/api/v1/sensors \
+  -H "Content-Type: application/json" \
+  -d "{\"id\":\"TEMP-001\",\"type\":\"Temperature\",\"status\":\"ACTIVE\",\"currentValue\":22.5,\"roomId\":\"LIB-301\"}"
+```
+
+### 6. Get all sensors
+
+```bash
+curl -X GET http://localhost:8080/smart-campus-api/api/v1/sensors
+```
+
+### 7. Filter sensors by type
+
+```bash
+curl -X GET "http://localhost:8080/smart-campus-api/api/v1/sensors?type=Temperature"
+```
+
+### 8. Add a reading
+
+```bash
+curl -X POST http://localhost:8080/smart-campus-api/api/v1/sensors/TEMP-001/readings \
+  -H "Content-Type: application/json" \
+  -d "{\"value\":24.8}"
+```
+
+### 9. Get readings
+
+```bash
+curl -X GET http://localhost:8080/smart-campus-api/api/v1/sensors/TEMP-001/readings
+```
+
+### 10. Trigger 422 invalid room error
+
+```bash
+curl -X POST http://localhost:8080/smart-campus-api/api/v1/sensors \
+  -H "Content-Type: application/json" \
+  -d "{\"id\":\"OCC-001\",\"type\":\"Occupancy\",\"status\":\"ACTIVE\",\"currentValue\":12,\"roomId\":\"NO-SUCH-ROOM\"}"
+```
+
+### 11. Trigger 403 maintenance sensor error
+
+```bash
+curl -X POST http://localhost:8080/smart-campus-api/api/v1/sensors/CO2-001/readings \
+  -H "Content-Type: application/json" \
+  -d "{\"value\":500.0}"
+```
+
+### 12. Trigger 409 room deletion error
+
+```bash
+curl -X DELETE http://localhost:8080/smart-campus-api/api/v1/rooms/LIB-301
+```
