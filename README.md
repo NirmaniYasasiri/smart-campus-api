@@ -138,3 +138,39 @@ smart-campus-api/
 
 ```text
 Clean and Build
+```
+---
+
+## 6. API Endpoints
+
+### Discovery
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/v1` | Returns API metadata and resource links |
+
+### Rooms
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/v1/rooms` | Returns all rooms |
+| POST | `/api/v1/rooms` | Creates a new room |
+| GET | `/api/v1/rooms/{roomId}` | Returns one room by ID |
+| DELETE | `/api/v1/rooms/{roomId}` | Deletes a room if it has no assigned sensors |
+
+### Sensors
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/v1/sensors` | Returns all sensors |
+| GET | `/api/v1/sensors?type=Temperature` | Filters sensors by type |
+| POST | `/api/v1/sensors` | Creates a new sensor |
+| GET | `/api/v1/sensors/{sensorId}` | Returns one sensor by ID |
+
+### Sensor Readings
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/v1/sensors/{sensorId}/readings` | Returns reading history |
+| POST | `/api/v1/sensors/{sensorId}/readings` | Adds a new reading for the sensor |
+
