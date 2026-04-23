@@ -59,3 +59,67 @@ Fields:
 - `/api/v1/sensors/{sensorId}/readings` → nested sensor reading history
 
 This structure keeps the API clear and resource-oriented. The reading history is modelled as a nested sub-resource because readings belong to a specific sensor.
+
+---
+
+## 3. Technology Stack
+
+- Java
+- JAX-RS (Jersey)
+- Apache Tomcat
+- Apache NetBeans
+- Maven
+- Jackson JSON
+- In-memory Java collections
+
+### Important Constraints
+
+- **JAX-RS only**
+- **No Spring Boot**
+- **No database**
+- **No ZIP-only submission**
+- **Public GitHub repository required**
+
+---
+
+## 4. Project Structure
+
+```text
+smart-campus-api/
+├── .gitignore
+├── README.md
+├── nbactions.xml
+├── pom.xml
+└── src/
+    └── main/
+        ├── java/
+        │   └── com/
+        │       └── smartcampus/
+        │           ├── ApplicationConfig.java
+        │           ├── model/
+        │           │   ├── Room.java
+        │           │   ├── Sensor.java
+        │           │   ├── SensorReading.java
+        │           │   └── ApiError.java
+        │           ├── store/
+        │           │   └── DataStore.java
+        │           ├── resource/
+        │           │   ├── DiscoveryResource.java
+        │           │   ├── RoomResource.java
+        │           │   ├── SensorResource.java
+        │           │   └── SensorReadingResource.java
+        │           ├── exception/
+        │           │   ├── RoomNotEmptyException.java
+        │           │   ├── LinkedResourceNotFoundException.java
+        │           │   └── SensorUnavailableException.java
+        │           ├── mapper/
+        │           │   ├── RoomNotEmptyExceptionMapper.java
+        │           │   ├── LinkedResourceNotFoundExceptionMapper.java
+        │           │   ├── SensorUnavailableExceptionMapper.java
+        │           │   └── GlobalExceptionMapper.java
+        │           └── filter/
+        │               └── LoggingFilter.java
+        └── webapp/
+            ├── index.html
+            └── WEB-INF/
+                └── web.xml
