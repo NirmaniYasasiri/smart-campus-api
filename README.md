@@ -174,3 +174,15 @@ Clean and Build
 | GET | `/api/v1/sensors/{sensorId}/readings` | Returns reading history |
 | POST | `/api/v1/sensors/{sensorId}/readings` | Adds a new reading for the sensor |
 
+---
+
+## 7. Sample JSON Request Bodies
+
+### Create Room
+
+```json
+{
+  "id": "LIB-301",
+  "name": "Library Quiet Study",
+  "capacity": 80
+}
