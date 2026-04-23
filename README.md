@@ -1,4 +1,13 @@
 # Smart Campus Sensor & Room Management API
+
+- **5COSC022W Client-Server Architectures**
+- **Module Leader: Mr. Caseem Farook**
+- **Assignment Number: 01**
+- **Assignment Type: Individual**
+- **Deadline: 24th April 2026**
+- **Student ID: 20231489/w2120471**
+- **Student name: P.M.K.N.Nirmani Yasasiri**
+
 ## 1. Project Overview
 
 This project is a RESTful API developed for the **Client-Server Architectures** coursework.
