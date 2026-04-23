@@ -123,3 +123,18 @@ smart-campus-api/
             ├── index.html
             └── WEB-INF/
                 └── web.xml
+```
+---
+
+## 5. How to Build and Run the Project
+
+### Using NetBeans and Apache Tomcat
+
+1. Open **Apache NetBeans**
+2. Open the project:
+   - `smart-campus-api`
+3. Ensure **Apache Tomcat** is configured in the **Services** tab
+4. Right-click the project and choose:
+
+```text
+Clean and Build
